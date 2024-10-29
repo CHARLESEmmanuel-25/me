@@ -1,0 +1,247 @@
+@media only screen and (max-width: 390px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+        background-color:black;
+        box-sizing:border-box;
+        
+    }
+
+    html, body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    
+
+    .contenair {
+        width: calc(100% - 4%);
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 100px;
+    }
+    
+
+    .photoDeprofile {
+       width: 90%;
+       height: 200px;
+       background:none;
+       position: relative;
+       margin-top: 2%;
+       display: flex;
+       justify-content: center;
+    }
+
+    .photoDeprofile img {
+        margin-top: 12%;
+        margin-right: 10%;
+        width: 30%;
+        height: 95%;
+        
+    }
+
+    .fond {
+        width: 99%;
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 250px;
+        background-color: #e8f9fd;
+        position: absolute;
+        background-attachment: fixed;
+        display: flex;
+       
+        
+    }
+
+    .presentation {
+        width: calc(100% - 4%);
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 100px;
+        margin: 0 auto 78% auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 60%;
+        margin-right: 15%;
+    }
+
+    details {
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        padding: 0.5em 0.5em 0;
+      }
+      
+      summary {
+        font-weight: bold;
+        margin: -0.5em -0.5em 0;
+        padding: 0.5em;
+      }
+      
+      details[open] {
+        padding: 0.5em;
+      }
+      
+      details[open] summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 0.5em;
+        color: white;
+      }
+      
+    .content-box{
+        display: none;
+    }
+
+    .content-mobile{
+        width: calc(100% - 4%);
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 400px;
+        margin-top: 24rem;
+        display: flex;
+        justify-content: center;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        padding-top: 30rem;
+        
+    }
+    .description-desktop{
+        display: none;
+    }
+
+    .date-tweet{
+        font-size: 10px;
+    }
+  
+
+    .info{
+        display: none;
+    }
+
+    .follow-button{
+        display: none;
+    }
+
+    .navigation-header{
+        display: none;
+    }
+
+    .post-main {
+        border: 1px solid white;
+        width: calc(100% - 4%);
+        padding-left: 2%;
+        padding-right: 2%;
+        font-family: Arial, sans-serif;
+        margin-top: 4%;
+    }
+
+    
+    
+
+    .email-container input[type="email"] {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        width: 20px; /* Réduit la largeur pour la version mobile */
+        min-width: 150px;
+
+        
+    }
+
+    .email-container button {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.7rem;
+        width: 50px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .mail{
+        width: calc(100% - 4%);
+        padding-left: 2%;
+        padding-right: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid red;
+    }
+
+
+    
+
+    .mail small {
+        font-size: 0.8rem;
+    }
+
+    .emotion {
+        width: 40px;
+        font-size: 7px;
+        display: flex;
+        align-items: center; 
+        border-radius: 8px;
+        padding: 4px 8px;
+        justify-content: center;
+        color: white;
+        background-color: #ef767a;
+        margin-left: 10%;
+        margin-top: 2%;
+    }
+    
+    .emotion p{
+        background-color: #ef767a;
+       
+    }
+    
+    .emotion img{
+        width: 8px;
+        background-color:#ef767a ;
+    }
+
+    .menuMobile{
+        visibility: visible;
+        width: calc(100% - 4%);
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 20px;
+        margin-top: 35%;
+        position: absolute;
+
+    }
+
+    main{
+        width: calc(100% - 4%);
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    
+
+}
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 480px){
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+        background-color: black;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    header{
+        width: 100%;
+        pa
+        height: auto;
+        border: 1px solid red;
+    }
+
+}
