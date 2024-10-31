@@ -97,19 +97,19 @@
         display: none;
     }
 
-    .content-mobile{
-        width: 100%;
-        padding-left: 2%;
-        padding-right: 2%;
-        height: 400px;
-        margin-top: 24rem;
-        display: flex;
-        justify-content: center;
-        scroll-behavior: smooth;
-        overflow-x: hidden;
-        padding-top: 30rem;
-        
-    }
+.content-mobile {
+    width: 100%;
+    margin-top: 24rem;
+    display: flex;
+    flex-direction: column; /* Empile les éléments */
+    justify-content: center;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 80%;
+}
+
+    
     .description-desktop{
         display: none;
     }
@@ -210,18 +210,17 @@
         display: flex;
         justify-content: space-evenly;
         z-index: 2000;
-       
-       
-        
-
+       background-color: #000000dd;
     }
+
+   
 
     
 
     .navMobile{
-        width: 33px;
-        height: 30px;
+        
         flex-direction: column;
+        background-color: #000000b3
         
     }
 
@@ -233,12 +232,30 @@
 
     main{
         width: calc(100% - 4%);
-        padding-left: 2%;
+        /*padding-left: 2%;*/
         padding-right: 2%;
     }
 
     .diplome {
         font-size: 10px;
+    }
+
+   #mobileb{
+    width: 100%;
+    margin-top: 24rem;
+    display: flex;
+    flex-direction: column; /* Empile les éléments */
+    justify-content: center;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 84rem;
+   }
+
+ 
+   
+   .pink {
+    color: #ef767a;
     }
 
   
