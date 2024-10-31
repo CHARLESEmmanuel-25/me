@@ -258,6 +258,19 @@
     color: #ef767a;
     }
 
+    .content-box-detail {
+        width: 99%;
+        padding-left: 2%;
+        padding-right: 2%;
+        flex-direction: column;
+        margin-top: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+    }
+
   
     
 
