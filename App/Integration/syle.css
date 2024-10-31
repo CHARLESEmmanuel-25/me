@@ -314,23 +314,32 @@ footer ul li a {
 }
 
 .text-formation {
+   
     margin-top: 2%;
     display: flex;
     flex-direction: column;
 }
 
 .text-formation .diplome {
+    
     margin-left: 8%;
+    margin-bottom: 1%;
+}
+
+.text-formation .diplome a{
+    color: yellow;
 }
 
 /* Projet */
-.projet-content {
-    width: 650px;
+.grid{
+    max-height: 200px;
     display: flex;
     justify-content: center;
     gap: 5%;
     margin-left: 8%;
     margin-bottom: 2%;
+    overflow-x:hidden;
+    
 }
 
 .image-projet {
