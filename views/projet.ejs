@@ -1,0 +1,96 @@
+
+<%- include('../views/Partials/header.ejs'); -%>
+    <main>
+        
+        <section class="content-box content-mobile projetContenBox" id="mobileb">
+            <div class="info">
+                <strong class="news-info has-text-white"><p>News</p></strong>
+                <div class="project-card">
+                    <div class="project-info">
+                        <div class="project-image">
+                            <img src="../assets/fondgro.png" alt="Project Image">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Project Title 1</h3>
+                           
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="project-card">
+                    <div class="project-info">
+                        <div class="project-image">
+                            <img src="../assets/logo-github.png" alt="Project Image">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Title 2</h3>
+                           
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="project-card">
+                    <div class="project-info">
+                        <div class="project-image">
+                            <img src="project3.jpg" alt="Project Image">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Title 3</h3>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% projetsInfoFromDB.forEach(projet => { %>
+
+                <article class="post-main">
+                    <div class="profile-info">
+                        <div class="photo-tweet">
+                            <img src="../assets/Capture d’écran 2024-10-15 à 13.00.20.png" alt="" srcset="">
+                        </div>
+                        <p class="username">CHARLES Emmanuel</p>
+                        <div class="pinned">
+                            <i class="fa-solid fa-thumbtack" style="color: #63E6BE;"></i>
+                            <p>pinned feed</p>
+                        </div>
+                    </div>
+                    <div class="emotion">
+                        <p>Content</p><span class="emoji"><img src="../assets/sourire.png" alt="" srcset=""></span>
+                    </div>
+                    <p class="tweet-content">ici et maintenant</p>
+                    <strong class="tag-titre-formation has-text-white"><%= projet.titre %></strong>
+                    <div class="text-formation"> <p class="tweet-content"><%= projet.description %></p>
+                        <p class="diplome">Lien du projet : <a href=""><%= projet.lien%></a></p>
+                    </div>
+                    <div class=" grid">
+                        <div class="image-projet cell"></div>
+                        <div class="image-projet cell"></div>
+                        <div class="image-projet cell"></div>
+                        <div class="image-projet cell"></div>
+                        <div class="image-projet cell"></div>
+                        <div class="image-projet cell"></div>
+                    </div>
+               
+                    <div class="emoji">
+                        <p class="date-tweet"><%= projet.date %></p>
+                        <div class="like-cong">
+                            <ul></ul>
+                            <ul><img src="../assets/comme.png" alt="" srcset="" width="16px"></ul>
+                        </div>
+                    </div>
+                </article>
+                
+            <% }) %>
+
+        </section>
+        <section class="mail">
+            <div class="email-container">
+                <input type="email" placeholder="Entrez votre adresse email" required />
+                <button type="submit">Envoyer</button>
+                
+            </div>
+            <small>No spam. Unsubscribe any time.</small>
+        </section>
+    </main>
+
+    <%- include('../views/Partials/footer.ejs'); -%>

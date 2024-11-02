@@ -1,76 +1,92 @@
 BEGIN;
 
--- Suppression des tables si elles existent
-DROP TABLE IF EXISTS "article" CASCADE;
-DROP TABLE IF EXISTS "images_a" CASCADE;
-DROP TABLE IF EXISTS "images_p" CASCADE;
-DROP TABLE IF EXISTS "newsletter" CASCADE;
-DROP TABLE IF EXISTS "portfolio" CASCADE;
-DROP TABLE IF EXISTS "projet" CASCADE;
+-- Supprimer les tables si elles existent
+DROP TABLE IF EXISTS Images_portfolio;
+DROP TABLE IF EXISTS Images_article;
+DROP TABLE IF EXISTS Article;
+DROP TABLE IF EXISTS Utilisateur;
+DROP TABLE IF EXISTS Portfolio;
+DROP TABLE IF EXISTS Projet;
+DROP TABLE IF EXISTS Emotion;
+DROP TABLE IF EXISTS Newsletter;
 
 -- Création des tables
-CREATE TABLE "article" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "titre" TEXT,
-    "description" TEXT,
-    "code_portfolio" TEXT,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMPTZ
+
+CREATE TABLE Emotion (
+   id SERIAL PRIMARY KEY,
+   denomination TEXT,
+   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMPTZ
 );
 
-CREATE TABLE "images_a" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "chemin" TEXT,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMPTZ
+CREATE TABLE Portfolio (
+   id SERIAL PRIMARY KEY,
+   titre TEXT,
+   nom TEXT,
+   prenom TEXT,
+   bio TEXT,
+   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMPTZ
 );
 
-CREATE TABLE "images_p" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "chemin" TEXT,
-    "code_projet" TEXT,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMPTZ
+CREATE TABLE Utilisateur (
+   id SERIAL PRIMARY KEY,
+   nom TEXT,
+   prenom TEXT,
+   mail TEXT,
+   metier TEXT,
+   status TEXT,
+   id_emotion INT NOT NULL REFERENCES Emotion(id),
+   id_portfolio INT NOT NULL REFERENCES Portfolio(id),
+   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMPTZ
 );
 
-CREATE TABLE "newsletter" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "email" TEXT,
-    "confirme" TEXT,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMPTZ
+CREATE TABLE Article (
+   id SERIAL PRIMARY KEY,
+   titre TEXT,
+   description TEXT,
+   id_utilisateur INT NOT NULL REFERENCES Utilisateur(id),
+   id_portfolio INT NOT NULL REFERENCES Portfolio(id),
+   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMPTZ
 );
 
-CREATE TABLE "portfolio" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "titre" TEXT,
-    "nom" TEXT,
-    "prenom" TEXT,
-    "bio" TEXT,
-    "code_abonee" TEXT,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMPTZ
+CREATE TABLE Images_article (
+    id SERIAL PRIMARY KEY,
+    chemin TEXT,
+    id_article INT NOT NULL REFERENCES Article(id),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ
 );
 
-CREATE TABLE "projet" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "titre" TEXT,
-    "image" TEXT,
-    "logo" TEXT,
-    "description" TEXT,
-    "technologie" TEXT,
-    "lien" TEXT,
-    "code_portfolio" TEXT,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMPTZ
+CREATE TABLE Projet (
+   id SERIAL PRIMARY KEY,
+   titre TEXT,
+   type TEXT,
+   logo TEXT,
+   description TEXT,
+   lien TEXT,
+   status TEXT,
+   id_portfolio INT NOT NULL REFERENCES Portfolio(id),
+   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMPTZ
 );
 
--- Réinitialisation des séquences
-ALTER SEQUENCE "article_id_seq" RESTART WITH 1;
-ALTER SEQUENCE "images_a_id_seq" RESTART WITH 1;
-ALTER SEQUENCE "images_p_id_seq" RESTART WITH 1;
-ALTER SEQUENCE "newsletter_id_seq" RESTART WITH 1;
-ALTER SEQUENCE "portfolio_id_seq" RESTART WITH 1;
-ALTER SEQUENCE "projet_id_seq" RESTART WITH 1;
+CREATE TABLE Images_portfolio (
+   id SERIAL PRIMARY KEY,
+   chemin TEXT,
+   id_projet INT NOT NULL REFERENCES Projet(id),
+   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMPTZ
+);
+
+CREATE TABLE Newsletter (
+   id SERIAL PRIMARY KEY,
+   email TEXT,
+   confirme BOOLEAN,  -- Utilisation d'un type booléen pour confirmer l'email
+   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMPTZ
+);
 
 COMMIT;

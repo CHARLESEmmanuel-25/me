@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="syle.css">
+    <link rel="stylesheet" href="style.mobile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/498a6dabea.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    
+    <title>Home</title>
+</head>
+<body>
+    <div class="menuMobile" id="mobileProjet">
+        <div class="navMobile">
+            <a href="http://localhost:3200/" class="linkMobile">
+                <i class="fa-solid fa-house" style="background-color: #000000ca;"></i>
+            </a>
+        </div>
+        <div class="navMobile">
+            <a href="http://localhost:3200/formation" class="linkMobile">
+                <i class="fa-solid fa-graduation-cap" style="background-color: #000000ca;"></i>
+            </a>
+        </div>
+        <div class="navMobile">
+            <a href="http://localhost:3200/travaux" class="linkMobile">
+                <i class="fa-solid fa-laptop-file" style="background-color: #000000ca;"></i>
+            </a>
+        </div>
+    </div>
+    
+    <header>
+        <div class="contenair" >
+            
+            <div class="fond">
+                
+                <img src="/pexels-anniroenkae-3418400.jpg" alt="">
+            </div>
+            <div class="follow-button">
+                <div class="follow-logo">
+                    <p>Follow</p>
+                    
+                </div>
+            </div>
+            <div class="photoDeprofile">
+                <img src="/<%= utilisateurInfo[0].photo%>" alt="" srcset="">
+            </div>
+            
+            <article class="presentation">
+                <h1 class="rouge"><%= utilisateurInfo[0].nom %> <%= utilisateurInfo[0].prenom %></h1></h1>
+                <strong><%= utilisateurInfo[0].metier %> <span class="badge tag is-warning"><%= utilisateurInfo[0].status %></span></strong>
+                <p><%= utilisateurInfo[0].techno%></p>
+            
+                <details>
+                    <summary>Voir plus </summary>
+                    Something small enough to escape casual notice.
+                </details>
+                <p class="description-desktop">
+                    <%= utilisateurInfo[0].bio%>
+                </p>
+            </article>
+            <nav class="navigation-header">
+                <ul class="navigation-headerUl">
+                    <li><a href="http://localhost:3200/"  class="nav-link linkisclicked" id="test">Accueil</a></li>
+                    <li><a href="http://localhost:3200/formation"  class="nav-link linkisclicked">Formation</a></li>
+                    <li><a href="http://localhost:3200/travaux"   class="nav-link linkisclicked">Projets</a></li>
+                </ul>
+                
+            </nav>
+
+            
+        </div>
+    </header>

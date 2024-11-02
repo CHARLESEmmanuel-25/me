@@ -167,6 +167,7 @@ p{
 
 
 
+
 .content-box {
     width: 99%;
     padding-left: 2%;
@@ -176,8 +177,7 @@ p{
     flex-direction: column;
     scroll-behavior: smooth;
     margin-top: 30%;
-    padding-top: 50%;
-  
+    padding-top: 38%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -756,3 +756,4 @@ details{
 .section-title{
     color: #ef767a;
 }
+

@@ -1,0 +1,106 @@
+
+<%- include('../views/Partials/header.ejs'); -%>
+    <main>
+        
+        <section class="content-box content-mobile">
+            <div class="info">
+                <strong class="news-info"><p>News</p></strong>
+                <div class="project-card">
+                    <div class="project-info">
+                        <div class="project-image">
+                            <img src="/fondgro.png" alt="Project Image">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Project Title 1</h3>
+                           
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="project-card">
+                    <div class="project-info">
+                        <div class="project-image">
+                            <img src="/logo-github.png" alt="Project Image">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Title 2</h3>
+                           
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="project-card">
+                    <div class="project-info">
+                        <div class="project-image">
+                            <img src="project3.jpg" alt="Project Image">
+                        </div>
+                        <div class="project-details">
+                            <h3 class="project-title">Title 3</h3>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <article class="post-main">
+                <div class="profile-info">
+                    <div class="photo-tweet">
+                        <img src="/<%= utilisateurInfo[0].photo%>" alt="" srcset="">
+                    </div>
+                    <p class="username"><%= utilisateurInfo[0].nom %> <%= utilisateurInfo[0].prenom %></p>
+                    <div class="pinned">
+                        <i class="fa-solid fa-thumbtack" style="color: #63E6BE;"></i>
+                        <p>pinned feed</p>
+                    </div>
+                </div>
+                <p class="tweet-content">Hello tous le monde</p>
+               <div class="tweet-text"> <p class="tweet-content">Nemo ratione corporis accusantium aut excepturi sit soluta assumenda deleniti voluptate necessitatibus, obcaecati ea debitis,</p>
+               
+                </div>
+                <img src="/Capture d’écran 2024-10-15 à 13.00.20.png" alt="" class="tweet-image">
+                <div class="emoji">
+                    <p class="date-tweet">2:45 PM · Oct 24, 2024</p>
+                    <div class="like-cong">
+                        <ul></ul>
+                        <ul><img src="/comme.png" alt="" srcset="" width="16px"></ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post-main">
+                <div class="profile-info">
+                    <div class="photo-tweet">
+                        <img src="/Capture d’écran 2024-10-15 à 13.00.20.png" alt="" srcset="">
+                    </div>
+                    <p class="username"><%= utilisateurInfo[0].nom %> <%= utilisateurInfo[0].prenom %></p>
+                    <div class="pinned">
+                        <i class="fa-solid fa-thumbtack" style="color: #63E6BE;"></i>
+                        <p>pinned feed</p>
+                    </div>
+                </div>
+                <p class="tweet-content">Hello tous le monde</p>
+               <div class="tweet-text"> <p class="tweet-content">Nemo ratione corporis accusantium aut excepturi sit soluta assumenda deleniti voluptate necessitatibus, obcaecati ea debitis,</p></div>
+                <img src="/Capture d’écran 2024-10-15 à 13.00.20.png" alt="" class="tweet-image">
+                <div class="emoji">
+                    <p class="date-tweet">2:45 PM · Oct 24, 2024</p>
+                    <div class="like-cong">
+                        <ul></ul>
+                        <ul><img src="/comme.png" alt="" srcset="" width="16px"></ul>
+                    </div>
+                </div>
+            </article>
+
+
+            
+            
+        </section>
+        <section class="mail">
+            <div class="email-container">
+                <input type="email" placeholder="Entrez votre adresse email" required />
+                <button type="submit">Envoyer</button>
+                
+            </div>
+            <small>No spam. Unsubscribe any time.</small>
+        </section>
+    </main>
+
+    <%- include('../views/Partials/footer.ejs'); -%>
