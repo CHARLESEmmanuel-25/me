@@ -97,17 +97,18 @@
         display: none;
     }
 
-.content-mobile {
-    width: 100%;
-    margin-top: 24rem;
-    display: flex;
-    flex-direction: column; /* Empile les éléments */
-    justify-content: center;
-    scroll-behavior: smooth;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-top: 80%;
-}
+    .content-mobile {
+        width: 100%;
+        margin-top: 24rem;
+        display: flex;
+        flex-direction: column; /* Empile les éléments */
+        justify-content: center;
+        scroll-behavior: smooth;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-top: 70%;
+    }
+
 
     
     .description-desktop{
@@ -249,7 +250,7 @@
     scroll-behavior: smooth;
     overflow-y: auto;
     overflow-x: hidden;
-    padding-top: 84rem;
+    padding-top: 47rem;
    }
 
  
